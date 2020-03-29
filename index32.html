@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html> 
+<head>	
+	<link rel="stylesheet" type="text/css" href="style32.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="main">  
+		<nav class="container">
+
+			<a href="#">Red Dead Redemption</a>
+			<a href="#">God of war</a>
+			<a href="#">The Last Of Us</a>
+			<a href="#">Shadow Of The Colossus</a>
+			
+		</nav>
+		<img class="main_img" src="./imagem/logored.png">
+	</div>
+
+	<div class="middle">
+		<img class="img" src="./imagem/middle.png">
+		<div>
+			<p>Red Dead Redemption is a Western-themed action-adventure video game developed by Rockstar San Diego and published by Rockstar Games. It was released for PlayStation 3 and Xbox 360 consoles in May 2010. It is the second title in the Red Dead franchise, after 2004's Red Dead Revolver. The game, set during the decline of the American frontier in the year 1911, follows John Marston, a former outlaw whose wife and son are taken hostage by the government in ransom for his services as a hired gun. Having no other choice, Marston sets out to bring three members of his former gang to justice.</p>
+		</div>
+	</div>
+
+	<div class="rating">
+		
+		<ul class="score">
+			<li>TheSixthAxis 10/10</li>
+			<li>Gamers' Temple 9.6/10</li>
+			<li>Eurogamer Italy 9.0/10</li>
+			<li>RealGamer 9.5/10</li>
+		</ul>
+	</div>
+
+
+	<div class="gallery">
+		<img class="imgh" src="./imagem/img5.jpg" alt="john galopando" onclick="openModal();currentSlide(1)" class="hover-shadow cursor"/>
+		<img class="imgh" src="./imagem/img6.jpg" alt="john si achando o fodao"onclick="openModal();currentSlide(2)" class="hover-shadow cursor" />
+		<img class="imgh" src="./imagem/img7.jpg" alt="john olhando pra nois" onclick="openModal();currentSlide(3)" class="hover-shadow cursor"/>
+	</div>
+
+	<div id="myModal" class="modal">
+
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+
+
+		<div class="modal-content">
+			<div class="mySlides">
+				<div class="numbertext">1 / 3</div>
+				<img src="./imagem/img5.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">2 / 3</div>
+				<img src="./imagem/img6.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">3 / 3</div>
+				<img src="./imagem/img7.jpg" style="width:100%">
+			</div>
+
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+		</div>
+
+		<div >
+			<div class="column">
+				<img class="demo cursor" src="./imagem/img5.jpg" style="width:100%" onclick="currentSlide(1)" alt="john galopando">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./imagem/img6.jpg" style="width:100%" onclick="currentSlide(2)" alt="john se achando fodao">
+			</div>
+			<div class="column">
+				<img class="demo cursor" src="./imagem/img7.jpg" style="width:100%" onclick="currentSlide(3)" alt="john olhando pra nois quebrando a 4 parede">
+			</div>
+		</div>
+
+
+	</div> 
+
+
+
+
+
+
+
+
+
+
+	<div class="video">
+		<div class="container"> 
+			<iframe width="800" height="460" src="https://www.youtube.com/embed/-o7rES_3ymA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="container">
+			<div class="copyright">
+				&copy; Luan's Website training
+			</div>
+		</div>
+	</footer>
+</body>
+
+
+<script>
+	function openModal() {
+		document.getElementById('myModal').style.display = "block";
+	}
+
+	function closeModal() {
+		document.getElementById('myModal').style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("demo");
+		var captionText = document.getElementById("caption");
+		if (n > slides.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += " active";
+				captionText.innerHTML = dots[slideIndex-1].alt;
+			}
+		</script>
+
+
+
+		</html>
+
